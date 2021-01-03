@@ -1,0 +1,39 @@
+---
+title: "LeafletDemo"
+author: "Trina Dey"
+date: "03/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Covid-19 Plot Data
+Here we are going to plot the top 10 countries on map based on number of cases of Covid-19 as on 03-Jan-2021. We are referring data from site <a href='https://www.worldometers.info/coronavirus/'>WorldOMeter's Coronavirus WebSite</a>. We are going to create a data frame of top 10 countries and then plot it on the  map. The circular markers are weighted based on the number of cases in that location. On clicking the markers, you can navigate to the site showing the distribution of cases within the country at different locations. The data is shown in the table below.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, comment=""}
+suppressPackageStartupMessages(library(leaflet))
+suppressPackageStartupMessages(library(dplyr))
+df <- data.frame(
+     country =c("USA","India","Brazil","Russia","UK","France","Turkey","Italy","Spain","Germany"),
+    lat = c(40.7128, 20.5937,14.2350, 61.5240, 55.3781, 46.2276,38.9637,41.8719,40.4637,51.1657),
+    lng = c(-74.0060, 78.9629,  51.9253, 105.3188,3.4360,2.2137,35.2433,12.5674,3.7492,10.4515),
+    count = c(20915238,10337069,7716405,3236787,2654779,2643239,2232035,2141201,1936718,1776411),
+    caseslink = c(
+        "<a href='https://www.worldometers.info/coronavirus/country/us/'>USA, 20915238</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/india/'>India, 10337069</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/brazil/'>Brazil, 7716405</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/russia/'>Russia, 3236787</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/uk/'>UK, 2654779</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/france/'>France, 2643239</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/turkey/'>Turkey, 2232035</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/italy/'>Italy, 2141201</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/spain/'>Spain, 1936718</a>",
+        "<a href='https://www.worldometers.info/coronavirus/country/germany/'>Germany, 1776411</a>"
+    )
+)
+df[,c(1,4)]
+
+leaflet() %>% addTiles() %>% addCircles(lat = df$lat, lng=df$lng, weight = 2, radius = df$count/10 , popup = df$caseslink)
+```
