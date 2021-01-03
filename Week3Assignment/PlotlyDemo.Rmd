@@ -1,0 +1,24 @@
+---
+title: "PlotlyDemo"
+author: "Trina Dey"
+date: "04/01/2021"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+This presentation is created as Week 3 Assignment for Developing Data Products Course on Coursera. We will be adding a interactive graph using plotly to show top 5 cities of india with active number of Covid-19 cases in last 10 days.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+suppressPackageStartupMessages(library(plotly))
+df <- data.frame(
+    state_code = c(replicate(10, "MH"),replicate(10, "KA"),replicate(10, "AP"),replicate(10, "TN"),replicate(10, "KL")),
+    state_name = c(replicate(10, "Maharashtra"),replicate(10, "Karnataka"),replicate(10, "Andhra Pradesh"),replicate(10, "Tamil Nadu"),replicate(10, "Kerala")),
+    dates = c(replicate(5,c("2020-12-25","2020-12-26","2020-12-27","2020-12-28","2020-12-29","2020-12-30","2020-12-31","2021-01-01","2021-01-02","2021-01-03"))),
+    count= c(3431,2854,3314,2498,3018,3537,3509,3524,3218,3282,1005,857,911,653,662,973,952,877,755,810,355,282,349,212,326,349,338,326,238,232,1027,1019,1009,1005,957,945,937,921,910,867,5397,3527,4905,3047,5887,6268,5215,4991,5328,4600)
+)
+plot_ly(df, x= df$dates, y = df$count, mode = "markers", color = as.factor(df$state_name))
+```
