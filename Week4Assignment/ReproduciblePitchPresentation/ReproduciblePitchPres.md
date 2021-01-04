@@ -37,12 +37,12 @@ Interactive plots can be zoomed in or zoomed out, clipped to enhance specific pa
 
 ```
   state_code  state_name       date count
-1         MH Maharashtra 2020-12-30  3537
-2         MH Maharashtra 2020-12-31  3509
-3         MH Maharashtra 2021-01-01  3524
-4         MH Maharashtra 2021-01-02  3218
-5         MH Maharashtra 2021-01-03  3282
-6         MH Maharashtra 2021-01-04     0
+1         MH Maharashtra 2020-12-20  3811
+2         MH Maharashtra 2020-12-21  2834
+3         MH Maharashtra 2020-12-22  3106
+4         MH Maharashtra 2020-12-23  3913
+5         MH Maharashtra 2020-12-24  3580
+6         MH Maharashtra 2020-12-25  3431
 ```
 
 Interactive Plots - Part 2
