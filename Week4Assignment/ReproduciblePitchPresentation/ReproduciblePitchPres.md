@@ -17,6 +17,8 @@ Application Technical Overview
 - server.R includes the the server logic of a Shiny web application
 - ui.R includes the the user-interface definition, which uses the sidebarLayout template
 - The application is hosted on Rstudio's shiny server in the cloud (Shinyapps.io)
+- The code for the app can be find at Github <a href="https://github.com/TD0401/CourseraDataProduct/tree/gh-pages/Week4Assignment/ShinyApp/CovidIndia">here</a>.
+- The UI for the app is hosted at shinyapps.io and can be found <a href="https://td0401.shinyapps.io/covidindia/">here</a>.
 
 Application Feature Overview
 ========================================================
@@ -56,9 +58,3 @@ p <- plot_ly(data, x = data$date, y= data$count, type="bar", mode="markers")
 htmlwidgets::saveWidget(as.widget(p), file = "demo.html")
 ```
 <iframe src="demo.html" style="position:absolute;height:100%;width:100%"></iframe>
-
-Documentation
-========================================================
-
-- The code for the app can be find at Github here.
-- The UI for the app is hosted at shinyapps.io and can be found here.
