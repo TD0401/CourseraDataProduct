@@ -1,0 +1,7 @@
+base
+knitr
+jsonlite
+ggplot2
+plotly
+lubridate
+dplyr

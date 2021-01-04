@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(plotly)
 library(shinycssloaders)
 
 # Define UI for application that draws a histogram for covid cases count and shows tabular data for count

@@ -1,0 +1,10 @@
+name: covidindia
+title:
+username:
+account: td0401
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3441992
+bundleId: 4056353
+url: https://td0401.shinyapps.io/covidindia/
+when: 1609765470.46611
